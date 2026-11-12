@@ -208,7 +208,6 @@ struct qcom_adsp {
 	bool crash_irq;
 };
 
-
 static int setup_global_sync_mem(struct qcom_adsp *adsp);
 
 static ssize_t txn_id_show(struct device *dev, struct device_attribute *attr, char *buf)
