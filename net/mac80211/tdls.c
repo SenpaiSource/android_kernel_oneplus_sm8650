@@ -1200,12 +1200,13 @@ ieee80211_tdls_mgmt_teardown(struct wiphy *wiphy, struct net_device *dev,
 }
 
 int ieee80211_tdls_mgmt(struct wiphy *wiphy, struct net_device *dev,
-			const u8 *peer, int link_id,
-			u8 action_code, u8 dialog_token, u16 status_code,
-			u32 peer_capability, bool initiator,
-			const u8 *extra_ies, size_t extra_ies_len)
+			const u8 *peer, u8 action_code, u8 dialog_token,
+			u16 status_code, u32 peer_capability,
+			bool initiator, const u8 *extra_ies,
+			size_t extra_ies_len)
 {
 	struct ieee80211_sub_if_data *sdata = IEEE80211_DEV_TO_SUB_IF(dev);
+	int link_id = -1;
 	int ret;
 
 	if (!(wiphy->flags & WIPHY_FLAG_SUPPORTS_TDLS))
